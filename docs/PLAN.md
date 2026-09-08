@@ -4,7 +4,7 @@ Concrete implementation plan for a thin, open-source headless CLI/client against
 
 Researched against public T3 Code source at commit `6ba15c027a6d411c7f75cc0ca59b601a295c3633` (2026-09) plus `docs/internals/environment-auth.md` and `docs/internals/connection-runtime.md`. Mintlify pages (`/api/websocket-protocol`, `/api/orchestration`) are **stale** and must not be treated as the wire contract.
 
-Status: planning only. No CLI implementation in this revision.
+Status: Phase 1 HTTP MVP is implemented in this repo (see README). This plan remains the design note for watch / later phases.
 
 ---
 

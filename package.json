@@ -1,0 +1,59 @@
+{
+  "name": "t3-agent",
+  "version": "0.1.0",
+  "description": "Headless HTTP CLI for T3 Code orchestration (threads, turns, env).",
+  "type": "module",
+  "license": "MIT",
+  "author": "Milind Sharma",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Milind220/t3-agent.git"
+  },
+  "homepage": "https://github.com/Milind220/t3-agent#readme",
+  "bugs": {
+    "url": "https://github.com/Milind220/t3-agent/issues"
+  },
+  "keywords": [
+    "t3",
+    "t3code",
+    "cli",
+    "orchestration",
+    "agent"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.33.3",
+  "bin": {
+    "t3-agent": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "docs"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepack": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "commander": "^14.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

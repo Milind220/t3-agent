@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm build
+      - run: pnpm test
+      - name: CLI help
+        run: |
+          node dist/cli.js --help
+          node dist/cli.js env --help
+          node dist/cli.js threads --help
+          node dist/cli.js thread --help
+          node dist/cli.js thread get --help
+          node dist/cli.js thread create --help
+          node dist/cli.js turn --help
+          node dist/cli.js turn start --help
+          node dist/cli.js status --help
